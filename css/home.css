@@ -1,0 +1,94 @@
+/* .menu-desplegable {
+    display: flex;
+    gap: 20px;
+}
+.menu-desplegable a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+} */
+ .header {
+  background: #2c3e50;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  padding: 1rem 1.5rem;
+  position: relative; /* Importante para posicionar el submenú */
+}
+
+.nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- Lógica del Mega Menú --- */
+
+.mega-menu {
+  position: absolute;
+  top: 100%; /* Justo debajo del header */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  background: white;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+  
+  /* Estado inicial: oculto */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Mostrar al hacer hover */
+.has-submenu:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.mega-menu-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mega-column h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e74c3c;
+}
+
+.mega-column a {
+  display: block;
+  color: #555 !important;
+  padding: 5px 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.mega-column a:hover {
+  color: #e74c3c !important;
+  padding-left: 5px;
+  transition: 0.2s;
+}
