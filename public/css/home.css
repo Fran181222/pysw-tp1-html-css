@@ -1,0 +1,170 @@
+body{
+  background-color: rgb(255, 255, 255);
+  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
+  margin: 0%;
+}
+.header {
+  background: #2c3e50;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  padding: 1rem 1.5rem;
+  position: relative; /* Importante para posicionar el submenú */
+}
+
+.nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- Lógica del Mega Menú --- */
+
+.mega-menu {
+  position: absolute;
+  top: 100%; /* Justo debajo del header */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background-color: rgb(255, 245, 230);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 0px 20px 20px 20px;
+  border-radius: 0 0 8px 8px;
+  
+  /* Estado inicial: oculto */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+/* Mostrar al hacer hover */
+.has-submenu:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.mega-menu-content {
+  display: flex;
+  gap:20px;
+}
+
+.mega-column h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e74c3c;
+}
+
+.mega-column a {
+  display: block;
+  color: #2c3e50 !important;
+  padding: 5px 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.mega-column a:hover {
+  color: #ee2c16 !important;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+#hero {
+  padding: 200px;;
+  min-width:max-content;
+  position: relative;
+}
+#texto-animado{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  color: wheat;
+}
+#texto-animado button{
+  padding: 10px;
+  background-color: rgb(230, 227, 43);
+  color: rgb(81, 103, 123);
+  border-radius: 7px;
+  border-color: #1c1c1d00;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0.9; */
+}
+#capa{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1b1b1d;
+  opacity: 0.5;
+  mix-blend-mode:overlay;
+}
+#destinos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+.destino-card{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 400px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.destino-card:hover {
+  transform: translateY(-10px);
+}
+.destino-card img {
+  width: 100%;
+  height: auto;
+}
+.destino-card h3 {
+  margin: 15px;
+  color: #2c3e50;
+  font-family: "Electrolize", sans-serif;
+}
+.destino-card p {
+  margin: 0 15px 15px 15px;
+  color: #555;
+  font-family: "Electrolize", sans-serif;
+}
+main h2{
+  color: #2c3e50;
+  font-size: 30px;
+  margin: 50px 0px 0px 40px;
+  font-family: "Electrolize", sans-serif;
+}
+
