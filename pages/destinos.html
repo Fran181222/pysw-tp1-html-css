@@ -1,18 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destinos</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../public/css/destinos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+  </head>
+  <body>
     <header>
-        <div class="menu-desplegable">
-            <a href="home.html">Home</a>
-            <a href="../pages/destinos.html">Destinos</a>
-            <a href="../pages/agencias.html">Agencias</a>
-            <a href="../pages/precios.html">Precios</a>
-        </div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="home.html">Inicio</a>
+        </li>
+
+        <li class="nav-item has-submenu">
+          <a href="#">Explorar</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-column">
+                <a href="destinos.html">Destinos</a>
+              </div>
+              <div class="mega-column">
+                <a href="agencias.html">Agencias</a>
+              </div>
+              <div class="mega-column">
+                <a href="precios.html">Precios</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
     </header>
-</body>
+    <main>
+      <section class="destinos-section">
+        <input type="radio" name="filtro" id="todos" checked />
+        <input type="radio" name="filtro" id="cultural" />
+        <input type="radio" name="filtro" id="naturaleza" />
+        <input type="radio" name="filtro" id="gastronomico" />
+
+        <div class="filter-controls">
+          <label for="todos">Todos</label>
+          <label for="cultural">Cultural</label>
+          <label for="naturaleza">Naturaleza</label>
+          <label for="gastronomico">Gastronómico</label>
+        </div>
+
+        <div class="masonry-grid">
+          <div class="card naturaleza small">
+            <img src="../public/img/paris.jpeg" alt="Paris" />
+            <div class="overlay"><h3>Paris</h3></div>
+          </div>
+          <div class="card cultural large">
+            <img src="../public/img/kyoto.jpg" alt="Kyoto" />
+            <div class="overlay"><h3>kyoto</h3></div>
+          </div>
+          <div class="card naturaleza small">
+            <img src="../public/img/sidney.jpg" alt="Australia" />
+            <div class="overlay"><h3>Australia</h3></div>
+          </div>
+          <div class="card gastronomico medium">
+            <img src="../public/img/ciudaddelcabo.jpg" alt="Ciudad del Cabo" />
+            <div class="overlay"><h3>Ciudad del Cabo</h3></div>
+          </div>
+          <div class="card cultural large">
+            <img src="../public/img/barcelona.jpg" alt="Barcelona" />
+            <div class="overlay"><h3>Barcelona</h3></div>
+          </div>
+          <div class="card naturaleza small">
+            <img src="../public/img/riodejaneiro.jpg" alt="Rio de Janeiro" />
+            <div class="overlay"><h3>Rio de Janeiro</h3></div>
+          </div>
+          <div class="card gastronomico medium">
+            <img src="../public/img/roma.jpg" alt="Roma" />
+            <div class="overlay"><h3>Roma</h3></div>
+          </div>
+          <div class="card gastronomico medium">
+            <img src="../public/img/bangok.jpg" alt="Bangkok" />
+            <div class="overlay"><h3>Bangkok</h3></div>
+          </div>
+          <div class="card gastronomico medium">
+            <img src="../public/img/comidasidney.jpg" alt="Sidney" />
+            <div class="overlay"><h3>Sydney</h3></div>
+          </div>
+          <div class="card gastronomico medium">
+            <img src="../public/img/brasil.jpg" alt="Brasil" />
+            <div class="overlay"><h3>Brasil</h3></div>
+          </div>
+          <div class="card naturaleza small">
+            <img src="../public/img/sudafrica.jpg" alt="Sudafrica" />
+            <div class="overlay"><h3>Sudafrica</h3></div>
+          </div>
+          <div class="card naturaleza small">
+            <img src="../public/img/italia.jpg" alt="Italia" />
+            <div class="overlay"><h3>Italia</h3></div>
+          </div>
+        </div>
+      </section>
+      <section class="precios-section">
+        <div class="table-container">
+          <h2 class="section-title">Comparador de Destinos Internacionales</h2>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Destino</th>
+                <th>País</th>
+                <th>Temporada Ideal</th>
+                <th>Precio Base (USD)</th>
+                <th>Incluye</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Destino">París</td>
+                <td data-label="País">Francia</td>
+                <td data-label="Temporada">Primavera</td>
+                <td data-label="Precio">$2.400</td>
+                <td data-label="Incluye">City Pass + Louvre</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Roma</td>
+                <td data-label="País">Italia</td>
+                <td data-label="Temporada">Verano</td>
+                <td data-label="Precio">$2.100</td>
+                <td data-label="Incluye">Tour Gastronómico</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Ciudad del Cabo</td>
+                <td data-label="País">Sudáfrica</td>
+                <td data-label="Temporada">Otoño</td>
+                <td data-label="Precio">$3.200</td>
+                <td data-label="Incluye">Safari Park</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Sídney</td>
+                <td data-label="País">Australia</td>
+                <td data-label="Temporada">Invierno (Suave)</td>
+                <td data-label="Precio">$3.800</td>
+                <td data-label="Incluye">Vuelo Interno + Snorkel</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Bangkok</td>
+                <td data-label="País">Tailandia</td>
+                <td data-label="Temporada">Verano</td>
+                <td data-label="Precio">$2.900</td>
+                <td data-label="Incluye">Tour Gastronómico</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Kyoto</td>
+                <td data-label="País">Japón</td>
+                <td data-label="Temporada">Primavera (Sakura)</td>
+                <td data-label="Precio">$3.500</td>
+                <td data-label="Incluye">Tour Cultural + Jardines</td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Barcelona</td>
+                <td data-label="País">España</td>
+                <td data-label="Temporada">Primavera</td>
+                <td data-label="Precio">$2.700</td>
+                <td data-label="Incluye">Tour Arquitectónico</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Recibe las mejores ofertas de viaje en tu correo.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu email aquí..." required />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+        <div class="footer-column">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Ubicación</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingeniería</p>
+      </div>
+    </footer>
+  </body>
 </html>

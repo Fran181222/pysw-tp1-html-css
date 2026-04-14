@@ -1,0 +1,378 @@
+body{
+    background: linear-gradient(to right, #ffffff41, #bcffbc5a);  
+    font-family:  "Electrolize", sans-serif;
+    margin: 0%;
+}
+/* --------------HEADER------------- */
+.header {
+  background: #2c3e50;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  background: linear-gradient(to right, #ff7b7bcf, #c20606d7);
+  justify-content: center;
+  margin: 0%;
+  padding: 3px 0 0 0;
+}
+
+.nav-item {
+  padding: 1rem 1.5rem;
+  position: relative; /* Importante para posicionar el submenú */
+}
+
+.nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  font-family:  "Electrolize", sans-serif;
+}
+
+/* --- Lógica del Mega Menú --- */
+
+.mega-menu {
+  position: absolute;
+  top: 100%; /* Justo debajo del header */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+background: linear-gradient(to right, #fff8f6, #e2c6b0);  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 20px 20px 20px 20px;
+  border-radius: 0 0 8px 8px;
+  
+  /* Estado inicial: oculto */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+/* Mostrar al hacer hover */
+.has-submenu:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.mega-menu-content {
+  display: flex;
+  gap:20px;
+}
+
+.mega-column h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e74c3c;
+  font-family:  "Electrolize", sans-serif;
+}
+
+.mega-column a {
+  display: block;
+  color: #2c3e50 !important;
+  padding: 5px 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.mega-column a:hover {
+  color: #ff1900 !important;
+  font-size: 1rem;
+  transition: 0.2s;
+  font-family:  "Electrolize", sans-serif;
+}
+
+/* -------------GALERIA "MANSORY"--------------  */
+
+/* Ocultar inputs */
+input[name="filtro"] { display: none; }
+
+/* Controles de filtro */
+.filter-controls {
+  text-align: center;
+  margin: 70px 0 30px 0;
+}
+
+.filter-controls label {
+  padding: 10px 20px;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+/* Color cuando el radio button está seleccionado */
+#todos:checked ~ .filter-controls label[for="todos"],
+#cultural:checked ~ .filter-controls label[for="cultural"],
+#naturaleza:checked ~ .filter-controls label[for="naturaleza"],
+#gastronomico:checked ~ .filter-controls label[for="gastronomico"] {
+  background: #e74c3c;
+  color: white;
+}
+
+/* --- Lógica de visibilidad --- */
+/* Por defecto mostramos todo. Si se selecciona uno, ocultamos lo que no coincida */
+#cultural:checked ~ .masonry-grid .card:not(.cultural),
+#naturaleza:checked ~ .masonry-grid .card:not(.naturaleza),
+#gastronomico:checked ~ .masonry-grid .card:not(.gastronomico) {
+  display: none;
+}
+
+.masonry-grid {
+  display: grid;
+  /* Creamos columnas de igual ancho que se ajustan solas */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Filas de 10px para tener control fino de la altura */
+  grid-auto-rows: 10px;
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  display: flex; /* Para que la imagen ocupe todo el alto del span */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crucial para que no se deformen las fotos */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* --- ASIGNACIÓN DE ALTURAS CON SPAN --- */
+
+.small {
+  grid-row-end: span 15; /* Aproximadamente 150px + gaps */
+}
+
+.medium {
+  grid-row-end: span 25; /* Aproximadamente 250px + gaps */
+}
+
+.large {
+  grid-row-end: span 40; /* Aproximadamente 400px + gaps */
+}
+
+/* Mantenemos la lógica de filtrado */
+#cultural:checked ~ .masonry-grid .card:not(.cultural),
+#naturaleza:checked ~ .masonry-grid .card:not(.naturaleza),
+#gastronomico:checked ~ .masonry-grid .card:not(.gastronomico) {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Empezamos invisible */
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1; /* Aparece suavemente */
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+.precios-section {
+  padding: 50px 20px;
+  background-color: #f4f7f6;
+}
+
+.section-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.responsive-table thead {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.responsive-table th, 
+.responsive-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+/* Efecto de resaltado solicitado */
+.responsive-table tbody tr:hover {
+  background-color: #fff5f4;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* --- MODO MÓVIL (MÁGICO) --- */
+@media screen and (max-width: 768px) {
+  .responsive-table thead {
+    display: none; /* Ocultamos los encabezados reales */
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #e74c3c;
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    position: relative;
+    padding-left: 50%; /* Espacio para el label */
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Aquí insertamos el texto de data-label antes de cada celda */
+  .responsive-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .responsive-table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* -----------FOOTER------------- */
+.main-footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 50px 0 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap:50px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family:  "Electrolize", sans-serif;
+}
+
+/* --- Formulario Newsletter --- */
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #c0392b;
+}
+
+/* --- Redes Sociales --- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icon {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s, padding-left 0.3s;
+}
+
+.social-icon:hover {
+  color: #e74c3c;
+  padding-left: 10px;
+}
+
+/* --- Mapa --- */
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  filter: grayscale(100%) invert(90%) contrast(90%); /* Estilo oscuro para el mapa */
+  transition: filter 0.5s;
+}
+
+.map-container:hover {
+  filter: grayscale(0%) invert(0%); /* El mapa recupera color al pasar el mouse */
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: #777;
+  font-family: monospace;
+}
