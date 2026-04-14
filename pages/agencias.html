@@ -14,33 +14,42 @@
   </head>
   <body>
     <header>
-      <ul class="nav-links">
-        <li class="nav-item">
-          <a href="home.html">Inicio</a>
-        </li>
+      <div class="header-bar">
+        <a class="logo-svg" href="home.html" aria-label="Ir al inicio">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle class="logo-circle" cx="32" cy="32" r="24"></circle>
+            <path class="logo-plane" d="M18 36l28-12-12 28-4-10-12-6z"></path>
+          </svg>
+          <span>Turismo UNJu</span>
+        </a>
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="home.html">Inicio</a>
+          </li>
 
-        <li class="nav-item has-submenu">
-          <a href="#">Explorar</a>
-          <div class="mega-menu">
-            <div class="mega-menu-content">
-              <div class="mega-column">
-                <a href="destinos.html">Destinos</a>
-              </div>
-              <div class="mega-column">
-                <a href="agencias.html">Agencias</a>
-              </div>
-              <div class="mega-column">
-                <a href="precios.html">Precios</a>
+          <li class="nav-item has-submenu">
+            <a href="#">Explorar</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-column">
+                  <a href="destinos.html">Destinos</a>
+                </div>
+                <div class="mega-column">
+                  <a href="agencias.html">Agencias</a>
+                </div>
+                <div class="mega-column">
+                  <a href="precios.html">Precios</a>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nav-item"><a href="blog.html">Blog</a></li>
-        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
-      </ul>
-      <!-- implemento modo oscuro -->
-      <button class="theme-toggle" type="button">Modo oscuro</button>
+          <li class="nav-item"><a href="blog.html">Blog</a></li>
+          <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <!-- implemento modo oscuro -->
+        <button class="theme-toggle" type="button">Modo oscuro</button>
+      </div>
     </header>
     <main>
       <section class="agencias-section">

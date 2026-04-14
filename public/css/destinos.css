@@ -1,9 +1,48 @@
-body{
-    background: linear-gradient(to right, #ffffff41, #bcffbc5a);  
-    font-family:  "Electrolize", sans-serif;
-    margin: 0%;
+/* implemento custom properties */
+:root {
+  --bg-page: linear-gradient(to right, #ffffff, #ecfff0);
+  --bg-card: #ffffff;
+  --bg-soft: #f9f9f9;
+  --bg-nav: linear-gradient(to right, #ff7b7bcf, #c20606d7);
+  --text-main: #1f2933;
+  --text-soft: #555555;
+  --accent: #e74c3c;
+  --accent-strong: #c0392b;
+  --hero-button: #fff75b;
+  --hero-button-text: #3e4e5e;
+  --border-soft: rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --overlay: #1b1b1d;
 }
-/* --------------HEADER------------- */
+
+/* implemento modo oscuro */
+body[data-theme="dark"] {
+  --bg-page: linear-gradient(to right, #111827, #172033);
+  --bg-card: #1f2937;
+  --bg-soft: #243244;
+  --bg-nav: linear-gradient(to right, #2a3347, #121826);
+  --text-main: #f3f4f6;
+  --text-soft: #d1d5db;
+  --accent: #f97316;
+  --accent-strong: #ea580c;
+  --hero-button: #fb923c;
+  --hero-button-text: #111827;
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --overlay: #05070d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family:  "Electrolize", sans-serif;
+  margin: 0%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 .header {
   background: #2c3e50;
   color: rgb(0, 0, 0);
@@ -13,13 +52,75 @@ body{
   z-index: 1000;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+}
+
+body[data-theme="dark"] header {
+  background: rgba(17, 24, 39, 0.75);
+}
+
+.header-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 18px;
+}
+
+/* implemento transiciones SVG */
+.logo-svg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo-svg svg {
+  width: 44px;
+  height: 44px;
+}
+
+.logo-circle,
+.logo-plane {
+  transition: transform 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
+}
+
+.logo-circle {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+}
+
+.logo-plane {
+  fill: var(--accent);
+  transform-origin: center;
+}
+
+.logo-svg:hover .logo-circle {
+  stroke: var(--text-main);
+}
+
+.logo-svg:hover .logo-plane {
+  transform: translate(3px, -3px) rotate(-8deg);
+}
+
 .nav-links {
   display: flex;
   list-style: none;
-  background: linear-gradient(to right, #ff7b7bcf, #c20606d7);
+  background: var(--bg-nav);
+  justify-self: center;
   justify-content: center;
   margin: 0%;
   padding: 3px 0 0 0;
+  border-radius: 999px;
 }
 
 .nav-item {
@@ -28,10 +129,27 @@ body{
 }
 
 .nav-item a {
-  color: rgb(0, 0, 0);
+  color: var(--text-main);
   text-decoration: none;
   font-weight: bold;
-  font-family:  "Electrolize", sans-serif;
+  position: relative;
+}
+
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-item a:hover::after {
+  transform: scaleX(1);
 }
 
 /* --- Lógica del Mega Menú --- */
@@ -42,7 +160,7 @@ body{
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-background: linear-gradient(to right, #fff8f6, #e2c6b0);  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+background: var(--bg-card);  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   padding: 20px 20px 20px 20px;
   border-radius: 0 0 8px 8px;
   
@@ -70,22 +188,37 @@ background: linear-gradient(to right, #fff8f6, #e2c6b0);  box-shadow: 0px 8px 16
   font-size: 1.1rem;
   margin-bottom: 15px;
   border-bottom: 2px solid #e74c3c;
-  font-family:  "Electrolize", sans-serif;
 }
 
 .mega-column a {
   display: block;
-  color: #2c3e50 !important;
+  color: var(--text-main) !important;
   padding: 5px 0;
   font-weight: bold;
   font-size: 0.9rem;
 }
 
 .mega-column a:hover {
-  color: #ff1900 !important;
+  color: var(--accent) !important;
   font-size: 1rem;
   transition: 0.2s;
-  font-family:  "Electrolize", sans-serif;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border-soft);
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-family: "Electrolize", sans-serif;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: #ffffff;
 }
 
 /* -------------GALERIA "MANSORY"--------------  */
@@ -425,13 +558,16 @@ header {
 .nav-item a,
 .mega-column a,
 .section-title,
-.overlay h3,
 .footer-column p,
 .footer-bottom,
 .social-icon,
 .responsive-table td,
 .responsive-table th {
   color: var(--text-main);
+}
+
+.overlay h3 {
+  color: #f8fafc;
 }
 
 .mega-menu,
@@ -457,10 +593,6 @@ header {
 }
 
 .theme-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 1500;
   padding: 10px 14px;
   border: 1px solid var(--border-soft);
   border-radius: 999px;
@@ -469,12 +601,39 @@ header {
   cursor: pointer;
   font-family: "Electrolize", sans-serif;
   box-shadow: var(--shadow-soft);
+  justify-self: end;
 }
 
 body[data-theme="dark"] .main-footer {
   background: #0b1220;
 }
 
+.main-footer .footer-column p,
+.main-footer .social-icon {
+  color: #e5e7eb;
+}
+
+.main-footer .footer-bottom {
+  color: #cbd5e1;
+}
+
 body[data-theme="dark"] .social-icon {
   color: #e5e7eb;
+}
+
+@media (max-width: 900px) {
+  .header-bar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-self: auto;
+  }
+
+  .theme-toggle,
+  .logo-svg {
+    justify-self: auto;
+  }
 }
