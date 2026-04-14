@@ -1,18 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Precios</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../public/css/precios.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="menu-desplegable">
-            <a href="home.html">Home</a>
-            <a href="../pages/destinos.html">Destinos</a>
-            <a href="../pages/agencias.html">Agencias</a>
-            <a href="../pages/precios.html">Precios</a>
-        </div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item has-submenu">
+          <a href="#">Explorar</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-column">
+                <a href="destinos.html">Destinos</a>
+              </div>
+              <div class="mega-column">
+                <a href="agencias.html">Agencias</a>
+              </div>
+              <div class="mega-column">
+                <a href="precios.html">Precios</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
     </header>
-</body>
+
+    <main>
+      <section class="hero-precios">
+        <div class="hero-texto">
+          <h1>Comparador de precios</h1>
+          <p>
+            En esta pagina podes comparar destinos, ver temporada recomendada y
+            entender mejor que incluye cada paquete.
+          </p>
+          <a href="contacto.html" class="btn-consulta">Pedir asesoramiento</a>
+        </div>
+        <img src="../public/img/barcelona.jpg" alt="Vista de Barcelona" />
+      </section>
+
+      <section class="resumen-precios">
+        <div class="resumen-card">
+          <h2>Viaje cultural</h2>
+          <p>Ideal para museos, historia y recorridos urbanos.</p>
+        </div>
+        <div class="resumen-card">
+          <h2>Viaje aventura</h2>
+          <p>Incluye excursiones, salidas guiadas y experiencias al aire libre.</p>
+        </div>
+        <div class="resumen-card">
+          <h2>Viaje premium</h2>
+          <p>Mas servicios, mejor ubicacion y actividades exclusivas.</p>
+        </div>
+      </section>
+
+      <section class="precios-section">
+        <div class="table-container">
+          <h2 class="section-title">Comparador de destinos internacionales</h2>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th>Destino</th>
+                <th>Pais</th>
+                <th>Temporada ideal</th>
+                <th>Precio base</th>
+                <th>Incluye</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Destino">Paris</td>
+                <td data-label="Pais">Francia</td>
+                <td data-label="Temporada">Primavera</td>
+                <td data-label="Precio">USD 2.400</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    City Pass
+                    <span class="tooltip-text">
+                      Traslados urbanos y acceso rapido a museos.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Roma</td>
+                <td data-label="Pais">Italia</td>
+                <td data-label="Temporada">Verano</td>
+                <td data-label="Precio">USD 2.100</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    Tour gastronomico
+                    <span class="tooltip-text">
+                      Recorrido con degustaciones y guia local.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Ciudad del Cabo</td>
+                <td data-label="Pais">Sudafrica</td>
+                <td data-label="Temporada">Otono</td>
+                <td data-label="Precio">USD 3.200</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    Safari Park
+                    <span class="tooltip-text">
+                      Excursion de dia completo con traslado.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Sidney</td>
+                <td data-label="Pais">Australia</td>
+                <td data-label="Temporada">Invierno suave</td>
+                <td data-label="Precio">USD 3.800</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    Snorkel
+                    <span class="tooltip-text">
+                      Salida guiada y equipo basico incluido.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Bangkok</td>
+                <td data-label="Pais">Tailandia</td>
+                <td data-label="Temporada">Verano</td>
+                <td data-label="Precio">USD 2.900</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    Food Tour
+                    <span class="tooltip-text">
+                      Mercados, street food y cocina local.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Destino">Kyoto</td>
+                <td data-label="Pais">Japon</td>
+                <td data-label="Temporada">Primavera</td>
+                <td data-label="Precio">USD 3.500</td>
+                <td data-label="Incluye">
+                  <span class="tooltip">
+                    Tour cultural
+                    <span class="tooltip-text">
+                      Templos, jardines y ceremonia de te.
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tips-precios">
+          <h3>Consejo rapido</h3>
+          <p>
+            Si queres gastar menos, Paris y Roma suelen ser las opciones mas
+            equilibradas para viajar en grupo.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Recibe las mejores ofertas de viaje en tu correo.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu email aqui..." required />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+        <div class="footer-column">
+          <h3>Siguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Ubicacion</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingenieria</p>
+      </div>
+    </footer>
+  </body>
 </html>

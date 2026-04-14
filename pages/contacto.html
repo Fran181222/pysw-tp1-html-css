@@ -1,11 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../public/css/contacto.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item has-submenu">
+          <a href="#">Explorar</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-column">
+                <a href="destinos.html">Destinos</a>
+              </div>
+              <div class="mega-column">
+                <a href="agencias.html">Agencias</a>
+              </div>
+              <div class="mega-column">
+                <a href="precios.html">Precios</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section class="contacto-hero">
+        <div class="hero-texto">
+          <h1>Formulario de contacto</h1>
+          <p>
+            Completando este formulario podemos recomendarte destino, rango de
+            precio y una agencia que se adapte a tu viaje.
+          </p>
+        </div>
+        <img src="../public/img/destino6.jpg" alt="Destino costero" />
+      </section>
+
+      <section class="contacto-layout" id="formulario-contacto">
+        <div class="contacto-info">
+          <h2>Informacion util</h2>
+          <p>Horario de atencion: lunes a viernes de 8 a 20 hs.</p>
+          <p>Tiempo estimado de respuesta: menos de 24 horas habiles.</p>
+          <p>WhatsApp: +54 388 400 0000</p>
+        </div>
+
+        <form class="contacto-form" action="#modal-confirmacion" method="get">
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="campo">
+            <label for="email">Correo electronico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Telefono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              pattern="[0-9+\\-\\s]{8,}"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="destino">Destino de interes</label>
+            <select id="destino" name="destino" required>
+              <option value="" selected disabled>Elegir destino</option>
+              <option value="paris">Paris</option>
+              <option value="kyoto">Kyoto</option>
+              <option value="roma">Roma</option>
+              <option value="bangkok">Bangkok</option>
+              <option value="sidney">Sidney</option>
+            </select>
+          </div>
+
+          <div class="campo campo-grande">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+
+          <div class="campo campo-grande checkbox-campo">
+            <input type="checkbox" id="terminos" required />
+            <label for="terminos">
+              Acepto ser contactado para recibir informacion del viaje.
+            </label>
+          </div>
+
+          <div class="campo campo-grande acciones-formulario">
+            <button type="submit" class="btn-enviar">Enviar consulta</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div id="modal-confirmacion" class="modal">
+      <div class="modal-contenido">
+        <div class="spinner"></div>
+        <h2>Consulta enviada</h2>
+        <p>Recibimos tus datos. Pronto vamos a responderte.</p>
+        <a href="#formulario-contacto" class="btn-cerrar">Volver</a>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Recibe consejos de viaje en tu correo.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu email aqui..." required />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+        <div class="footer-column">
+          <h3>Siguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Ubicacion</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingenieria</p>
+      </div>
+    </footer>
+  </body>
 </html>

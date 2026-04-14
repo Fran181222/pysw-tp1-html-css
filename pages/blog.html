@@ -1,11 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../public/css/blog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="home.html">Inicio</a>
+        </li>
+        <li class="nav-item has-submenu">
+          <a href="#">Explorar</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-column">
+                <a href="destinos.html">Destinos</a>
+              </div>
+              <div class="mega-column">
+                <a href="agencias.html">Agencias</a>
+              </div>
+              <div class="mega-column">
+                <a href="precios.html">Precios</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section class="blog-hero">
+        <div class="hero-texto">
+          <h1>Blog de destinos</h1>
+          <p>
+            Esta pagina muestra notas cortas de viajes con formato de revista,
+            filtros por categoria y comentarios con avatares hechos en CSS.
+          </p>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <input type="radio" name="filtro-blog" id="todos" checked />
+        <input type="radio" name="filtro-blog" id="cultural" />
+        <input type="radio" name="filtro-blog" id="aventura" />
+        <input type="radio" name="filtro-blog" id="gastronomia" />
+
+        <div class="filter-controls">
+          <label for="todos">Todos</label>
+          <label for="cultural">Cultural</label>
+          <label for="aventura">Aventura</label>
+          <label for="gastronomia">Gastronomia</label>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card cultural featured">
+            <img src="../public/img/kyoto.jpg" alt="Kyoto" />
+            <div class="blog-content">
+              <span class="categoria">Cultural</span>
+              <h2>Kyoto en temporada de sakura</h2>
+              <p>
+                Templos, jardines y recorridos tranquilos para quienes buscan
+                un viaje relajado y visualmente inolvidable.
+              </p>
+            </div>
+          </article>
+
+          <article class="blog-card aventura">
+            <img src="../public/img/sudafrica.jpg" alt="Sudafrica" />
+            <div class="blog-content">
+              <span class="categoria">Aventura</span>
+              <h3>Ciudad del Cabo entre mar y trekking</h3>
+              <p>
+                Un destino ideal para combinar paisaje, caminatas y vistas
+                panoramicas.
+              </p>
+            </div>
+          </article>
+
+          <article class="blog-card gastronomia">
+            <img src="../public/img/comidasidney.jpg" alt="Sidney" />
+            <div class="blog-content">
+              <span class="categoria">Gastronomia</span>
+              <h3>Sidney para amantes de la comida</h3>
+              <p>
+                Cafes, mercados y platos frente al mar para una escapada urbana
+                distinta.
+              </p>
+            </div>
+          </article>
+
+          <article class="blog-card cultural">
+            <img src="../public/img/roma.jpg" alt="Roma" />
+            <div class="blog-content">
+              <span class="categoria">Cultural</span>
+              <h3>Roma con tiempos reales</h3>
+              <p>
+                Una forma mas tranquila de recorrer la ciudad sin querer ver
+                todo en un solo dia.
+              </p>
+            </div>
+          </article>
+
+          <article class="blog-card aventura">
+            <img src="../public/img/riodejaneiro.jpg" alt="Rio de Janeiro" />
+            <div class="blog-content">
+              <span class="categoria">Aventura</span>
+              <h3>Rio y sus mejores vistas</h3>
+              <p>
+                Playa, ciudad y miradores en un mismo viaje lleno de energia.
+              </p>
+            </div>
+          </article>
+
+          <article class="blog-card gastronomia">
+            <img src="../public/img/bangok.jpg" alt="Bangkok" />
+            <div class="blog-content">
+              <span class="categoria">Gastronomia</span>
+              <h3>Bangkok para comer distinto todos los dias</h3>
+              <p>
+                Mercados, comida callejera y recorridos llenos de sabor.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="comentarios-section">
+        <h2 class="section-title">Comentarios destacados</h2>
+        <div class="comentarios-grid">
+          <article class="comentario" data-initials="LP">
+            <h3>Kyoto fue mi viaje favorito</h3>
+            <p>
+              El articulo me ordeno mucho la idea del viaje y despues me resulto
+              facil armar el recorrido.
+            </p>
+          </article>
+          <article class="comentario" data-initials="MR">
+            <h3>Bangkok me sorprendio</h3>
+            <p>
+              Tener una nota separada por categoria ayuda a encontrar rapido lo
+              que uno quiere ver.
+            </p>
+          </article>
+          <article class="comentario" data-initials="AG">
+            <h3>Roma con otra mirada</h3>
+            <p>
+              Me gusto que no este planteado como una carrera, sino como una
+              experiencia mas real.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>Recibe novedades y articulos en tu correo.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu email aqui..." required />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+        <div class="footer-column">
+          <h3>Siguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Ubicacion</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingenieria</p>
+      </div>
+    </footer>
+  </body>
 </html>
