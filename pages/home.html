@@ -109,7 +109,82 @@
             nocturna.
           </p>
       </section>
+      <section>
+        <div class="contador-container">
+          <span class="contador"></span>
+          <span class="plus">+ visitantes</span>
+        </div>
+      </section>
+      <section class="carrusel-seccion">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+
+        <div class="cards-container">
+          <label class="card" for="item-3" id="test-1">
+            <p>"Increíble experiencia en las Salinas Grandes. ¡Totalmente recomendado!"</p>
+            <h4>- Juan Pérez -</h4>
+          </label>
+          <label class="card" for="item-2" id="test-2">
+            <p>"La atención de las agencias locales fue impecable. Muy fácil de usar."</p>
+            <h4>- Ana García -</h4>
+          </label>
+          <label class="card" for="item-1" id="test-3">
+            <p>"La guía de precios me ayudó a planificar mi presupuesto de estudiante."</p>
+            <h4>- Luis Torres -</h4>
+          </label>
+          <label class="card" for="item-3" id="test-4">
+            <p>"¡Me encantó la variedad de destinos disponibles! Encontré el viaje perfecto."</p>
+            <h4>- María López -</h4>
+          </label>
+          <label class="card" for="item-2" id="test-5">
+            <p>"El proceso de reserva fue muy sencillo y rápido. ¡Excelente servicio!"</p>
+            <h4>- Carlos Sánchez -</h4>
+          </label>
+          <label class="card" for="item-1" id="test-6">
+            <p>"Los precios son muy competitivos. ¡Definitivamente volveré a usar esta plataforma!"</p>
+            <h4>- Laura Fernández -</h4>
+          </label>
+        </div>
+
+        <div class="dots">
+          <label for="item-1"></label>
+          <label for="item-2"></label>
+          <label for="item-3"></label>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Recibe las mejores ofertas de viaje en tu correo.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Tu email aquí..." required>
+              <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+            <h3>Ubicación</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar" 
+              width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingeniería</p>
+      </div>
+    </footer>
   </body>
 </html>
