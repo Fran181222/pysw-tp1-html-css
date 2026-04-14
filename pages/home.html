@@ -11,7 +11,20 @@
   </head>
   <body>
     <header>
-      <ul class="nav-links">
+      <div class="header-bar">
+        
+        <!-- implemento transiciones SVG -->
+
+        <a class="logo-svg" href="home.html" aria-label="Ir al inicio">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle class="logo-circle" cx="32" cy="32" r="24"></circle>
+            <path class="logo-plane" d="M18 36l28-12-12 28-4-10-12-6z"></path>
+          </svg>
+          <span>Turismo UNJu</span>
+        </a>
+        
+        <ul class="nav-links">
+
         <li class="nav-item">
           <a href="home.html">Inicio</a>
         </li>
@@ -33,23 +46,30 @@
           </div>
         </li>
 
-        <li class="nav-item"><a href="blog.html">Blog</a></li>
-        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
-      </ul>
+          <li class="nav-item"><a href="blog.html">Blog</a></li>
+          <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <!-- implemento modo oscuro -->
+        <button class="theme-toggle" type="button">Modo oscuro</button>
+      </div>
     </header>
     <main>
-      <section id="hero">
+      <section id="hero" class="snap-section">
         <div id="texto-animado">
           <h1>Estas listo para conocer nuevos destinos?</h1>
           <a class="hero-button" href="destinos.html">Conocer mas</a>
+          <div class="loading-status">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Cargando destinos destacados...</span>
+          </div>
         </div>
-        <video muted autoplay loop>
+        <video muted autoplay loop playsinline>
           <source src="../public/video/video.mp4" type="video/mp4" />
         </video>
         <div id="capa"></div>
       </section>
       <h2>Destinos populares</h2>
-      <section id="destinos">
+      <section id="destinos" class="snap-section">
         <div class="destino-card">
           <img src="../public/img/destino1.jpg" alt="Destino 1" />
           <h3>París, Francia</h3>
@@ -110,13 +130,13 @@
           </p>
         </div>
       </section>
-      <section>
+      <section class="snap-section">
         <div class="contador-container">
           <span class="contador"></span>
           <span class="plus">+ visitantes</span>
         </div>
       </section>
-      <section class="carrusel-seccion">
+      <section class="carrusel-seccion snap-section">
         <input type="radio" name="slider" id="item-1" checked>
         <input type="radio" name="slider" id="item-2">
         <input type="radio" name="slider" id="item-3">
@@ -187,5 +207,6 @@
         <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingeniería</p>
       </div>
     </footer>
+    <script src="../public/js/theme.js"></script>
   </body>
 </html>

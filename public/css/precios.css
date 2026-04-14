@@ -336,3 +336,113 @@ body {
     flex-direction: column;
   }
 }
+
+
+
+/* implemento modo oscuro funcional */
+:root {
+  --bg-page: linear-gradient(to right, #ffffff, #ecfff0);
+  --bg-card: #ffffff;
+  --bg-soft: #f8fafc;
+  --bg-nav: linear-gradient(to right, #ff7b7bcf, #c20606d7);
+  --text-main: #1f2933;
+  --text-soft: #555555;
+  --accent: #e74c3c;
+  --accent-strong: #c0392b;
+  --border-soft: rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme="dark"] {
+  --bg-page: linear-gradient(to right, #111827, #172033);
+  --bg-card: #1f2937;
+  --bg-soft: #243244;
+  --bg-nav: linear-gradient(to right, #2a3347, #121826);
+  --text-main: #f3f4f6;
+  --text-soft: #d1d5db;
+  --accent: #f97316;
+  --accent-strong: #ea580c;
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-main);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  background: var(--bg-nav);
+}
+
+.nav-item a,
+.mega-column a,
+.hero-texto h1,
+.hero-texto p,
+.resumen-card h2,
+.resumen-card p,
+.section-title,
+.tips-precios h3,
+.tips-precios p,
+.footer-column p,
+.footer-bottom,
+.social-icon,
+.responsive-table td,
+.responsive-table th {
+  color: var(--text-main);
+}
+
+.mega-menu,
+.resumen-card,
+.table-container,
+.tips-precios,
+.responsive-table,
+.responsive-table td,
+.responsive-table th {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.tooltip {
+  background: var(--bg-soft);
+  color: var(--text-main);
+}
+
+.responsive-table thead {
+  background: var(--accent);
+}
+
+.newsletter-form button,
+.btn-consulta {
+  background: var(--accent);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 1500;
+  padding: 10px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  font-family: "Electrolize", sans-serif;
+  box-shadow: var(--shadow-soft);
+}
+
+body[data-theme="dark"] .main-footer {
+  background: #0b1220;
+}
+
+body[data-theme="dark"] .social-icon {
+  color: #e5e7eb;
+}
