@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="header-bar">
+        
+        <!-- implemento transiciones SVG -->
+
+        <a class="logo-svg" href="../pages/home.html" aria-label="Ir al inicio">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle class="logo-circle" cx="32" cy="32" r="24"></circle>
+            <path class="logo-plane" d="M18 36l28-12-12 28-4-10-12-6z"></path>
+          </svg>
+          <span>Turismo UNJu</span>
+        </a>
+        
+        <ul class="nav-links">
+
+        <li class="nav-item">
+          <a href="../pages/home.html">Inicio</a>
+        </li>
+
+        <li class="nav-item has-submenu">
+          <a href="#">Explorar</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-column">
+                <a href="../pages/destinos.html">Destinos</a>
+              </div>
+              <div class="mega-column">
+                <a href="../pages/agencias.html">Agencias</a>
+              </div>
+              <div class="mega-column">
+                <a href="../pages/precios.html">Precios</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+          <li class="nav-item"><a href="../pages/blog.html">Blog</a></li>
+          <li class="nav-item"><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+        <!-- implemento modo oscuro -->
+        <button class="theme-toggle" type="button">Modo oscuro</button>
+      </div>
+    </header>
+    <main>
+      <section id="hero" class="snap-section">
+        <div id="texto-animado">
+          <h1>Estas listo para conocer nuevos destinos?</h1>
+          <a class="hero-button" href="../pages/destinos.html">Conocer mas</a>
+          <div class="loading-status">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Cargando destinos destacados...</span>
+          </div>
+        </div>
+        <video muted autoplay loop playsinline>
+          <source src="../public/video/video.mp4" type="video/mp4" />
+        </video>
+        <div id="capa"></div>
+      </section>
+      <h2>Destinos populares</h2>
+      <section id="destinos" class="snap-section">
+        <div class="destino-card">
+          <img src="../public/img/destino1.jpg" alt="Destino 1" />
+          <h3>París, Francia</h3>
+          <p>
+            La ciudad del amor y la luz, famosa por su arquitectura, arte y
+            cultura.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino2.jpg" alt="Destino 2" />
+          <h3>Kyoto, Japón</h3>
+          <p>
+            Una ciudad llena de historia, templos antiguos y hermosos jardines.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino3.jpg" alt="Destino 3" />
+          <h3>Barcelona, España</h3>
+          <p>
+            Conocida por su arquitectura única, playas y vibrante vida nocturna.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino4.jpg" alt="Destino 4" />
+          <h3>Ciudad del Cabo, Sudáfrica</h3>
+          <p>
+            Famosa por su belleza natural, montañas y playas impresionantes.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino5.jpg" alt="Destino 5" />
+          <h3>Río de Janeiro, Brasil</h3>
+          <p>
+            Conocida por sus playas icónicas, el Cristo Redentor y su vibrante
+            cultura.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino6.jpg" alt="Destino 6" />
+          <h3>Sídney, Australia</h3>
+          <p>
+            Famosa por su icónica Ópera, playas y vibrante vida urbana.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino7.jpg" alt="Destino 7" />
+          <h3>Roma, Italia</h3>
+          <p>
+            Una ciudad llena de historia, arte y arquitectura impresionante.
+          </p>
+        </div>
+        <div class="destino-card">
+          <img src="../public/img/destino8.jpg" alt="Destino 8" />
+          <h3>Bangkok, Tailandia</h3>
+          <p>
+            Conocida por sus templos, mercados flotantes y vibrante vida
+            nocturna.
+          </p>
+        </div>
+      </section>
+      <section class="snap-section">
+        <div class="contador-container">
+          <span class="contador"></span>
+          <span class="plus">+ visitantes</span>
+        </div>
+      </section>
+      <section class="carrusel-seccion snap-section">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+
+        <div class="cards-container">
+          <label class="card" for="item-3" id="test-1">
+            <p>"Increíble experiencia en las Salinas Grandes. ¡Totalmente recomendado!"</p>
+            <h4>- Juan Pérez -</h4>
+          </label>
+          <label class="card" for="item-2" id="test-2">
+            <p>"La atención de las agencias locales fue impecable. Muy fácil de usar."</p>
+            <h4>- Ana García -</h4>
+          </label>
+          <label class="card" for="item-1" id="test-3">
+            <p>"La guía de precios me ayudó a planificar mi presupuesto de estudiante."</p>
+            <h4>- Luis Torres -</h4>
+          </label>
+          <label class="card" for="item-3" id="test-4">
+            <p>"¡Me encantó la variedad de destinos disponibles! Encontré el viaje perfecto."</p>
+            <h4>- María López -</h4>
+          </label>
+          <label class="card" for="item-2" id="test-5">
+            <p>"El proceso de reserva fue muy sencillo y rápido. ¡Excelente servicio!"</p>
+            <h4>- Carlos Sánchez -</h4>
+          </label>
+          <label class="card" for="item-1" id="test-6">
+            <p>"Los precios son muy competitivos. ¡Definitivamente volveré a usar esta plataforma!"</p>
+            <h4>- Laura Fernández -</h4>
+          </label>
+        </div>
+
+        <div class="dots">
+          <label for="item-1"></label>
+          <label for="item-2"></label>
+          <label for="item-3"></label>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Recibe las mejores ofertas de viaje en tu correo.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Tu email aquí..." required>
+              <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-column">
+            <h3>Ubicación</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58217.34830172605!2d-65.33534575!3d-24.1834246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940d79679237c9a9%3A0xc3f956c2d9a65529!2sSan%20Salvador%20de%20Jujuy!5e0!3m2!1ses!2sar!4v1712530000000!5m2!1ses!2sar" 
+              width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Turismo UNJu - APU - Facultad de Ingeniería</p>
+      </div>
+    </footer>
+    <script src="../public/js/theme.js"></script>
+  </body>
+</html>
