@@ -424,10 +424,10 @@ header {
   box-shadow: var(--shadow-soft);
 }
 
-.newsletter-form button,
+/* .newsletter-form button,
 .btn-perfil {
   background: var(--accent);
-}
+} */
 
 .newsletter-form button:hover {
   background: var(--accent-strong);
