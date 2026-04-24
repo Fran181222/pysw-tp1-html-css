@@ -1,4 +1,5 @@
 /* implemento custom properties */
+/* 1. Tema claro por defecto: estas variables se usan en toda la pagina */
 :root {
   --bg-page: linear-gradient(to right, #ffffff, #ecfff0);
   --bg-card: #ffffff;
@@ -15,7 +16,8 @@
   --overlay: #1b1b1d;
 }
 
-/* implemento modo oscuro */
+/* 2. Tema oscuro: cuando JS agrega data-theme="dark" al body,
+   estas variables reemplazan a las del tema claro */
 body[data-theme="dark"] {
   --bg-page: linear-gradient(to right, #111827, #172033);
   --bg-card: #1f2937;
@@ -37,6 +39,7 @@ html {
 }
 
 body{
+  /* 3. Aplicacion global del tema: el fondo y color general salen de las variables */
   background: var(--bg-page);
   color: var(--text-main);
   font-family:  "Electrolize", sans-serif;
@@ -61,6 +64,7 @@ header {
 }
 
 body[data-theme="dark"] header {
+  /* 4. Cambio puntual del header solo para el modo oscuro */
   background: rgba(17, 24, 39, 0.75);
 }
 
@@ -74,6 +78,7 @@ body[data-theme="dark"] header {
 
 /* implemento transiciones SVG */
 .logo-svg {
+  /* Usa el color principal del tema activo */
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -93,6 +98,7 @@ body[data-theme="dark"] header {
 }
 
 .logo-circle {
+  /* El acento cambia segun el tema */
   fill: none;
   stroke: var(--accent);
   stroke-width: 4;
@@ -112,6 +118,7 @@ body[data-theme="dark"] header {
 }
 
 .nav-links {
+  /* La barra de navegacion toma su fondo desde la variable del tema */
   display: flex;
   list-style: none;
   background: var(--bg-nav);
@@ -127,6 +134,7 @@ body[data-theme="dark"] header {
 }
 
 .nav-item a {
+  /* Los links del menu usan el color de texto del tema */
   color: var(--text-main);
   text-decoration: none;
   font-weight: bold;
@@ -153,6 +161,7 @@ body[data-theme="dark"] header {
 /* --- Lógica del Mega Menú --- */
 
 .mega-menu {
+  /* El submenu tambien cambia con el tema porque usa variables */
   position: absolute;
   top: 100%; /* Justo debajo del header */
   left: 50%;
@@ -203,6 +212,7 @@ background: var(--bg-card);  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
 }
 
 .theme-toggle {
+  /* El boton de modo oscuro se repinta con las variables actuales */
   border: 1px solid var(--border-soft);
   background: var(--bg-card);
   color: var(--text-main);
@@ -238,6 +248,7 @@ background: var(--bg-card);  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
 
 /* implemento micro-interacciones */
 #texto-animado .hero-button{
+  /* Boton principal: colores definidos por variables del tema */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -278,6 +289,7 @@ video {
   /* opacity: 0.9; */
 }
 #capa{
+  /* La superposicion del video cambia con la variable --overlay */
   position:absolute;
   top: 0;
   left: 0;
@@ -295,6 +307,7 @@ video {
   padding: 30px;
 }
 .destino-card{
+  /* Las tarjetas toman fondo y sombra del tema activo */
   background-color: var(--bg-card);
   border-radius: 10px;
   box-shadow: var(--shadow-soft);
@@ -322,16 +335,19 @@ video {
   filter: saturate(1.1);
 }
 .destino-card h3 {
+  /* Titulo principal de la tarjeta */
   margin: 15px;
   color: var(--text-main);
   font-family: "Electrolize", sans-serif;
 }
 .destino-card p {
+  /* Texto secundario de la tarjeta */
   margin: 0 15px 15px 15px;
   color: var(--text-soft);
   font-family: "Electrolize", sans-serif;
 }
 main h2{
+  /* Titulos generales de seccion */
   color: var(--text-main);
   font-size: 30px;
   margin: 50px 0px 0px 40px;
@@ -354,7 +370,8 @@ main h2{
 }
 
 /* Contador */
-@property --num {
+@property --num { //Eso crea una variable CSS llamada --num y 
+                    le dice al navegador que va a guardar un número entero.
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
@@ -365,6 +382,7 @@ main h2{
   align-items: center;
 }
 .contador {
+  /* El contador usa el color de acento del tema */
   font-size: 3rem;
   font-weight: bold;
   color: var(--accent);
@@ -419,6 +437,7 @@ input[type="radio"] { display: none; }
 }
 
 .card {
+  /* Tarjetas del carrusel: usan el fondo suave del tema */
   width: 100%;
   padding: 40px;
   background: var(--bg-soft);
@@ -456,6 +475,7 @@ input[type="radio"] { display: none; }
 #item-1:checked ~ .dots label:nth-child(1),
 #item-2:checked ~ .dots label:nth-child(2),
 #item-3:checked ~ .dots label:nth-child(3) {
+  /* El punto activo usa el color de acento del tema */
   background: var(--accent);
   transform: scale(1.3);
 }
@@ -485,6 +505,7 @@ input[type="radio"] { display: none; }
 }
 
 .footer-column h3 {
+  /* Titulos del footer con el color de acento */
   color: var(--accent);
   margin-bottom: 20px;
   font-size: 1.2rem;
@@ -505,6 +526,7 @@ input[type="radio"] { display: none; }
 }
 
 .newsletter-form button {
+  /* Boton del newsletter con los colores del tema */
   padding: 10px 20px;
   background: var(--accent);
   color: white;
@@ -515,6 +537,7 @@ input[type="radio"] { display: none; }
 }
 
 .newsletter-form button:hover {
+  /* Hover del boton usando la version mas intensa del acento */
   background: var(--accent-strong);
 }
 
@@ -544,6 +567,7 @@ input[type="radio"] { display: none; }
 }
 
 .social-icon:hover {
+  /* Las redes cambian al color de acento al pasar el mouse */
   color: var(--accent);
   padding-left: 10px;
   transform: translateX(4px);
